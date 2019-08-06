@@ -1,2 +1,2 @@
 # dark-bootstrap
-A dark theme websites built with bootstrap
+A dark theme for websites built with bootstrap
