@@ -11,10 +11,11 @@ before_install:
 
 install:
   - npm install
-  - bundle install
+  # - bundle install
 
 script:
   - ls -Ralph
+  - npm run test
 
 cache:
   directories:
