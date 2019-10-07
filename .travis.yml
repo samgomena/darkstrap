@@ -13,8 +13,9 @@ install:
   # - bundle install
 
 script:
-  - npm run test
+  - npm run dist
+  - ls -alh dist
 
 cache:
   directories:
-    - "node_modules"
+    - node_modules
