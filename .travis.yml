@@ -5,17 +5,16 @@ node_js:
   - "8.16.1"
 
 before_install:
-  - "ls -Ralph"
   - git clone https://github.com/twbs/bootstrap.git
   - cd bootstrap
 
 install:
   - npm install
-  - bundle install
+  # - bundle install
 
 script:
-  - ls -Ralph
+  - npm run test
 
 cache:
   directories:
-    - "node_modules"
+    - node_modules
