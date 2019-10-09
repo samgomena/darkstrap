@@ -22,11 +22,12 @@ before_deploy:
   - git config --local user.email "samgomena@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
+  - tar -cvf darkstrap.tar dist
 deploy:
   provider: releases
   api_key: "$GH_TOKEN"
   file_glob: true
-  file: "dist/*"
+  file: "darkstrap.tar"
   skip_cleanup: true
   # on:
   #   tags: true
