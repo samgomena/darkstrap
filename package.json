@@ -1,0 +1,13 @@
+{
+  "name": "dark-bootstrap",
+  "version": "0.0.1",
+  "description": "A dark theme for websites built with bootstrap",
+  "main": "index.js",
+  "repository": "git@github.com:samgomena/dark-bootstrap.git",
+  "author": "Sam Gomena <samgomena@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
