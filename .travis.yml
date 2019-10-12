@@ -30,7 +30,9 @@ deploy:
 - provider: releases
   api_key: "$GH_TOKEN"
   file_glob: true
-  file: "darkstrap.tar"
+  file: 
+    - "darkstrap.tar"
+    - dist/css/bootstrap.min.css
   skip_cleanup: true
   on:
     branch: master
