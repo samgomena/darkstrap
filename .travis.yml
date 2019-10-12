@@ -12,9 +12,8 @@ install:
   - npm install
 
 before_script:
-  - popd
   # Copy custom variables file to bootrstrap source files before building
-  - cp scss/custom.scss bootstrap/scss/_variables.scss
+  - cp ../scss/custom.scss bootstrap/scss/_variables.scss
 
 script:
   - npm run dist
