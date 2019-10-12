@@ -6,15 +6,18 @@ node_js:
 
 before_install:
   - git clone https://github.com/twbs/bootstrap.git
-  - cd bootstrap
+  - pushd bootstrap
 
 install:
   - npm install
-  # - bundle install
+
+before_script:
+  - popd
+  # Copy custom variables file to bootrstrap source files before building
+  - cp scss/custom.scss bootstrap/scss/_variables.scss
 
 script:
   - npm run dist
-  - ls -alh dist
 
 before_deploy:
   # Set up git user name and tag this commit
@@ -23,8 +26,9 @@ before_deploy:
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
   - tar -cvf darkstrap.tar dist
+
 deploy:
-  provider: releases
+- provider: releases
   api_key: "$GH_TOKEN"
   file_glob: true
   file: "darkstrap.tar"
