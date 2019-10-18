@@ -24,6 +24,12 @@ before_deploy:
   - git config --local user.email "samgomena@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG
+  # Define rename function
+  - rename() { for i in $1*; do mv "$i" "${i/$1/$2}"; done; }
+  # Rename alll js and css files
+  - rename dist/js/bootsrap dist/js/darkstrap
+  - rename dist/css/bootsrap dist/css/darkstrap
+  # Tar dist directory for deployment
   - tar -cvf darkstrap.tar dist
 
 deploy:
@@ -32,7 +38,6 @@ deploy:
   file_glob: true
   file: 
     - "darkstrap.tar"
-    - dist/css/bootstrap.min.css
   skip_cleanup: true
   on:
     branch: master

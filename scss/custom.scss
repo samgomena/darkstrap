@@ -509,7 +509,7 @@ $input-bg:                              $ds-secondary !default;
 $input-disabled-bg:                     $ds-disabled !default;
 $input-disabled-border-color:           null !default;
 
-$input-color:                           $gray-200 !default;
+$input-color:                           $ds-text-primary !default;
 $input-border-color:                    $gray-700 !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      $box-shadow-inset !default;
@@ -596,7 +596,7 @@ $form-check-input-margin-x:             .25rem !default;
 $form-grid-gutter-width:                10px !default;
 
 $input-group-addon-color:               $input-color !default;
-$input-group-addon-bg:                  $gray-200 !default;
+$input-group-addon-bg:                  $ds-primary !default;
 $input-group-addon-border-color:        $input-border-color !default;
 
 
