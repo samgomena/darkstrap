@@ -26,9 +26,9 @@ before_deploy:
   - git tag $TRAVIS_TAG
   # Define rename function
   - rename() { for i in $1*; do mv "$i" "${i/$1/$2}"; done; }
-  # Rename alll js and css files
-  - rename dist/js/bootsrap dist/js/darkstrap
-  - rename dist/css/bootsrap dist/css/darkstrap
+  # Rename all js and css files
+  - rename dist/js/bootstrap dist/js/darkstrap
+  - rename dist/css/bootstrap dist/css/darkstrap
   # Tar dist directory for deployment
   - tar -cvf darkstrap.tar dist
 
