@@ -1139,3 +1139,7 @@ $kbd-color:                         $white !default;
 $kbd-bg:                            $gray-900 !default;
 
 $pre-color:                         null !default;
+
+svg {
+  stroke: $ds-text-primary;
+}
